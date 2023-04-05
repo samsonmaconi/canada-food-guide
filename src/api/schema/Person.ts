@@ -6,5 +6,6 @@ export interface Person {
 }
 
 export interface Family {
+    name: string;
     members: Person[];
 }

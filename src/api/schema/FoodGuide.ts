@@ -15,7 +15,7 @@ export interface OneUnitServingExample {
     foodGroupID: string;
     foodGroupCategoryID: number;
     servingSize: string;
-    food: string;
+    foodName: string;
     imageUrl?: string;
 }
 
