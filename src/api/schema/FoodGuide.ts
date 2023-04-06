@@ -1,29 +1,49 @@
 
-export interface FoodGroupCategories {
-    id: string;
-    name: string;
+export const Genders = [
+    "Male",
+    "Female"
+]
+
+export const AgeGroups = [
+    "2 to 3",
+    "4 to 8",
+    "9 to 13",
+    "14 to 18",
+    "19 to 30",
+    "31 to 50",
+    "51 to 70",
+    "71+"
+]
+
+export interface ServingsGuide {
+    Male: ServingsGuideEntry[];
+    Female: ServingsGuideEntry[];
 }
 
 export interface ServingsGuideEntry {
-    foodGroupID: string;
-    sex: string;
     ageRange: string;
     servings: number;
 }
 
 export interface OneUnitServingExample {
-    foodGroupID: string;
-    foodGroupCategoryID: number;
-    servingSize: string;
     foodName: string;
+    servingSize: string;
     imageUrl?: string;
 }
 
+export interface FoodGroupCategory {
+    id: number;
+    name: string;
+    oneUnitServingExamples: OneUnitServingExample[];
+}
 export interface FoodGroup {
     id: string;
     name: string;
     directionalStatemments: string[];
-    categories: FoodGroupCategories[];
-    servingsGuide: ServingsGuideEntry[];
-    oneUnitServingExamples: OneUnitServingExample[];
+    categories: FoodGroupCategory[];
+    servingsGuide: ServingsGuide;
+}
+
+export interface FoodGuideData {
+    foodGroupData: FoodGroup[];
 }
