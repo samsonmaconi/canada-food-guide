@@ -6,30 +6,30 @@ import { STRING_CONSTANTS } from '../Strings.const';
 import FoodSamples from '../FoodSamples/FoodSamples';
 import useBreakpoint, { Breakpoints } from '../hooks/useBreakpoint';
 
-const FoodGroupCard = (props: { foodGroupData: FoodGroup, userInfo: { sex: any; ageRange: any; } }) => {
+const FoodGroupCard = (props: { foodGroupData: FoodGroup, userInfo?: { sex: any; ageRange: any; } }) => {
   const { id, name, directionalStatemments, categories, servingsGuide } = props.foodGroupData
   const breakpoint: Breakpoints = useBreakpoint();
   const isSmallScreen = [Breakpoints.sm, Breakpoints.md].includes(breakpoint);
-  const servingSize = getServingSize(props.userInfo, servingsGuide);
+  const servingSize = props.userInfo && getServingSize(props.userInfo, servingsGuide);
 
   return (
     <div className={`food-group-card bg-${id}`}>
       <div className="food-group-card-content">
         <div className="title-group">
           <h3 className="food-group-card-title">{name}</h3>
-          <div className="food-group-card-serving-size">
+          {servingSize && <div className="food-group-card-serving-size">
             <span className="serving-size-label">{STRING_CONSTANTS.RecommendedServing}</span>
             <span className="serving-size">{STRING_CONSTANTS.ServingUnits.replace("{0}", servingSize.toString())}</span>
-          </div>
+          </div>}
         </div>
         <ul className="food-group-card-direction">
           {directionalStatemments.map((statement: string, key: React.Key) =>
             <li key={key}>{statement}</li>
           )}
         </ul>
-      {
-        isSmallScreen && renderFoodSamples(categories)
-      }
+        {
+          isSmallScreen && renderFoodSamples(categories)
+        }
       </div>
       {
         !isSmallScreen && renderFoodSamples(categories)
@@ -57,7 +57,7 @@ FoodGroupCard.propTypes = {
   userInfo: PropTypes.shape({
     ageRange: PropTypes.string.isRequired,
     sex: PropTypes.string.isRequired
-  }).isRequired
+  })
 }
 
 export default FoodGroupCard

@@ -12,7 +12,7 @@ const Header = (props: { title: any; description: any; familyMembers: any; }) =>
         <h1 className="header-title">{title}</h1>
         <span className="header-description">{description}</span>
       </div>
-      {familyMembers && <UserMenu familyMembers={familyMembers} />}
+      {familyMembers && familyMembers.length ? <UserMenu familyMembers={familyMembers} /> : null}
     </header>
   );
 };

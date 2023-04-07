@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import './UserMenu.scss';
 import { Person } from '../../api';
 import { STRING_CONSTANTS } from '../Strings.const';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { updateActiveMemberIndex } from '../../redux/slices/familyMembersSlice';
 
 const UserInfo = (props: { name: any; ageGroup: any; sex: any; }) => {
   const { name, ageGroup, sex } = props;
@@ -16,12 +18,14 @@ const UserInfo = (props: { name: any; ageGroup: any; sex: any; }) => {
 
 const UserMenu = (props: { familyMembers: Person[] }) => {
   const { familyMembers } = props;
-  const [selectedMemberIndex, setSelectedMemberIndex] = useState(0);
-  const { name, ageRange, sex } = familyMembers[selectedMemberIndex];
+  const familyMembersData = useAppSelector(state => state.familyMembers)
+  const { allMembers, activeMemberIndex } = familyMembersData;
+  const dispatch = useAppDispatch();
+  const { name, ageRange, sex } = allMembers[activeMemberIndex];
 
 
   const handleMemberSelect = (memberIndex: any) => {
-    setSelectedMemberIndex(memberIndex);
+    dispatch(updateActiveMemberIndex(+memberIndex));
     // update the serving size on the parent component
   };
 
@@ -30,7 +34,7 @@ const UserMenu = (props: { familyMembers: Person[] }) => {
       <div className="user-menu-group">
         <div className="user-menu-dropdown">
           <select
-            value={selectedMemberIndex}
+            value={activeMemberIndex}
             onChange={(e) => handleMemberSelect(e.target.value)}
           >
             {familyMembers.map((member, key) => (
