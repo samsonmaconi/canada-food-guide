@@ -29,4 +29,4 @@ FoodItemCard.propTypes = {
   categoryId: PropTypes.number.isRequired
 };
 
-export default FoodItemCard;
+export default React.memo(FoodItemCard);

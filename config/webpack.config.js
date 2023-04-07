@@ -693,6 +693,9 @@ module.exports = function (webpackEnv) {
                 noEmit: true,
                 incremental: true,
                 tsBuildInfoFile: paths.appTsBuildInfoFile,
+                paths: {
+                  "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
+                }
               },
             },
             context: paths.appPath,

@@ -6,7 +6,6 @@ import DailyFoodGuide from './pages/DailyFoodGuide/DailyFoodGuide';
 function App() {
   return (
     <div className="App">
-      <Registration></Registration>
       <DailyFoodGuide />
     </div>
   );

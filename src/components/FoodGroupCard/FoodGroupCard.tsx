@@ -60,4 +60,4 @@ FoodGroupCard.propTypes = {
   })
 }
 
-export default FoodGroupCard
+export default React.memo(FoodGroupCard)

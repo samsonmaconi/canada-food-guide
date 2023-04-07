@@ -37,4 +37,4 @@ const FoodSamples: React.FC<Props> = ({ foodGroupCategories }) => {
     );
 };
 
-export default FoodSamples
+export default React.memo(FoodSamples);

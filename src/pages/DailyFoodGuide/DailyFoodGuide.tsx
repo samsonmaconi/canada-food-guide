@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './DailyFoodGuide.scss';
 import { useApi } from '../../api';
-import { FoodGroupCard, Header } from '../../components'
+import { FoodGroupCard, Header, Registration } from '../../components'
 import { STRING_CONSTANTS } from '../../components/Strings.const';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import Dialog from '@mui/material/Dialog';
@@ -20,7 +20,9 @@ const DailyFoodGuide = () => {
   return (
     <div className="daily-food-guide">
       <Header familyMembers={allMembers} />
-      <Dialog disableEscapeKeyDown open={isRegistrationDialogOpen} onClose={() => {dispatch(closeDialog())}}></Dialog>
+      <Dialog disableEscapeKeyDown open={isRegistrationDialogOpen} onClose={() => {dispatch(closeDialog())}}>
+        <Registration/>
+      </Dialog>
       {isLoading && STRING_CONSTANTS.Loading}
       {!isLoading &&
         <div className="food-group-cards">
@@ -38,4 +40,4 @@ const DailyFoodGuide = () => {
 }
 
 
-export default DailyFoodGuide
+export default React.memo(DailyFoodGuide);
