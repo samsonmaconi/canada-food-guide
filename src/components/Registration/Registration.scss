@@ -1,0 +1,32 @@
+.registration {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .title {
+        margin-bottom: 15px;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .invividualFamilyGrp {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .member-inputGroup {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgb(25 118 210 / 8%);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

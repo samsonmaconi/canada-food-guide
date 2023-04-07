@@ -1,7 +1,7 @@
 
 export const Genders = [
-    "Male",
-    "Female"
+    "Female",
+    "Male"
 ]
 
 export type Sex = "Male" | "Female";
@@ -18,6 +18,7 @@ export const AgeGroups = [
 ]
 
 export interface ServingsGuide {
+    [key: string]: ServingsGuideEntry;
     Male: ServingsGuideEntry;
     Female: ServingsGuideEntry;
 }

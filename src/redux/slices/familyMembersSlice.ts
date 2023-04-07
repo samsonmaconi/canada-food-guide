@@ -4,25 +4,16 @@ export const familyMembersSlice = createSlice({
   name: 'familyMembers',
   initialState: {
     activeMemberIndex: 0,
-    allMembers: [ // TODO: Clear
-      {
-        name: "Samson",
-        ageRange: "19 to 30",
-        sex: "Male"
-      },
-      {
-        name: "Joan",
-        ageRange: "71+",
-        sex: "Female"
-      }
-    ]
+    allMembers: new Array(),
+    familyName: "",
+    isIndividual: true
   },
   reducers: {
     registerMembers: (state, action) => {
-      state = {
-        activeMemberIndex: 0,
-        allMembers: action.payload
-      }
+      state.activeMemberIndex = 0;
+      state.allMembers = [...action.payload.allMembers]
+      state.familyName = action.payload.familyName
+      state.isIndividual = action.payload.isIndividual
     },
     updateActiveMemberIndex: (state, action) => {
       state.activeMemberIndex = action.payload
@@ -30,7 +21,9 @@ export const familyMembersSlice = createSlice({
     reset: (state, action) => {
       state = {
         activeMemberIndex: 0,
-        allMembers: []
+        allMembers: [],
+        familyName: "",
+        isIndividual: true
       }
     },
   },

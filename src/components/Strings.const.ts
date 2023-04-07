@@ -9,5 +9,6 @@ export const STRING_CONSTANTS = {
     RecommendedServing: "Recommended Serving",
     ServingUnits: "{0} units",
     ServiceUnavailable: "Service currently unavailable. Please try again later.",
-    UpdateFamilyProfile: "Update Family Profile"
+    UpdateFamilyProfile: "Update Family Profile",
+    FamilyName: "{0} Family"
 }
