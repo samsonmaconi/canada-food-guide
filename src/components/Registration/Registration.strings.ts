@@ -1,9 +1,9 @@
 // TODO: Localize for other languages
 
 export const REGISTRATION_STRING_CONSTANTS = {
-    userRegistration: "I'd like to know you better",
+    userRegistration: "Tell me about your family",
     addMember: "Add Member",
-    individual: "Individual",
+    individual: "Single",
     family: "Family",
     familyName: "Family Name",
     name: "Name",
