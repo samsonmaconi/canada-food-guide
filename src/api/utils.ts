@@ -5,13 +5,13 @@ export const papaPromise = (file: any) => new Promise((resolve, reject) => {
         header: true,
         dynamicTyping: true,
         download: true,
-        complete: function(results: {data: [], errors: [], meta: any}) {
+        complete: (results: { data: [], errors: [], meta: any }) => {
             resolve(results);
         },
-        error: function(error: any) {
+        error: (error: any) => {
             reject(error);
         }
-      }
+    }
 
     Papa.parse(file, parserConfig);
 })

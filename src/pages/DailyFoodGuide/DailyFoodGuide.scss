@@ -1,0 +1,16 @@
+.daily-food-guide {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.food-group-cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px;
+    row-gap: 15px;
+}

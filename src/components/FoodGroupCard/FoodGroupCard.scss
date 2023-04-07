@@ -1,0 +1,92 @@
+.food-group-card {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    &-icon {
+        position: relative;
+        top: 10px;
+        right: 10px;
+        max-width: 100px;
+        opacity: 0.5;
+    }
+
+    & .title-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+
+    &-content {
+        text-align: left;
+    }
+
+    &-title {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    &-serving-size {
+        display: flex;
+        column-gap: 5px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 3px 10px;
+        border-radius: 10px;
+        position: relative;
+
+        & .serving-size-label {
+            font-size: .8rem;
+        }
+    }
+
+    &-direction {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 1em;
+        margin: 10px 0 10px 40px;
+        border-radius: 10px;
+        width: 450px;
+
+        & li {
+            margin: 10px 0 0 0;
+            list-style-type: "⮕  ";
+        }
+    }
+
+    &.bg-me {
+        background: linear-gradient(135deg, #f94144 0%, #f96d5d 50%, #f6a3a7 100%);
+
+        &:hover {
+            background: linear-gradient(135deg, #f96d5d 0%, #f94144 50%, #f6a3a7 100%);
+        }
+    }
+
+    &.bg-gr {
+        background: linear-gradient(135deg, #f8961e 0%, #f9c74f 50%, #f2e3b4 100%);
+
+        &:hover {
+            background: linear-gradient(135deg, #f9c74f 0%, #f8961e 50%, #f2e3b4 100%);
+        }
+    }
+
+    &.bg-vf {
+        background: linear-gradient(135deg, #90be6d 0%, #5f9f5c 50%, #2b580c 100%);
+
+        &:hover {
+            background: linear-gradient(135deg, #5f9f5c 0%, #90be6d 50%, #2b580c 100%);
+        }
+    }
+
+    &.bg-mi {
+        background: linear-gradient(135deg, #81d1e9 0%, #8fbce6 50%, #c3bef0 100%);
+
+        &:hover {
+            background: linear-gradient(135deg, #8fbce6 0%, #81d1e9 50%, #c3bef0 100%);
+        }
+    }
+}

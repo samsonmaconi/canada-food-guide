@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import DailyFoodGuide from './pages/DailyFoodGuide';
+import DailyFoodGuide from './pages/DailyFoodGuide/DailyFoodGuide';
 
 function App() {
   return (

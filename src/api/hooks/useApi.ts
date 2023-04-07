@@ -13,7 +13,7 @@ export const useApi = (): { data: FoodGuideData | null, isLoading: boolean, erro
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function loadData() {
+    const loadData = async () => {
       setIsLoading(true);
       parseAndTransformCSVData();
     }
@@ -81,8 +81,7 @@ export const useApi = (): { data: FoodGuideData | null, isLoading: boolean, erro
         if (foodCategories[fgcat_id]) {
           foodCategories[fgcat_id].oneUnitServingExamples.push({
             foodName: food,
-            servingSize: srvg_sz,
-            imageUrl: ""
+            servingSize: srvg_sz
           })
         }
       });
