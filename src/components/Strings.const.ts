@@ -5,6 +5,7 @@ export const STRING_CONSTANTS = {
     HeaderDescription: "Recommended Food Guide Servings per day",
     Loading: "Loading...",
     UpdateFamilyProfile: "Update Family Profile",
-    ServingSize: "Serving Size",
-    ServingUnits: "{0} units"
+    ServingSize: "Recommended Serving Size",
+    ServingUnits: "{0} units",
+    SampleOneUnitServings: "Sample 1 unit servings"
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Header.scss';
 import UserMenu from '../UserMenu/UserMenu';
-import { STRING_CONSTANTS } from '../string.constants';
+import { STRING_CONSTANTS } from '../Strings.const';
 
 const Header = (props: { title: any; description: any; familyMembers: any; }) => {
   const { title, description, familyMembers } = props;

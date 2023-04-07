@@ -1,9 +1,11 @@
 .food-group-card {
     cursor: pointer;
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: space-between;
     padding: 20px;
-    border-radius: 10px;
+    column-gap: 40px;
+    border-radius: 0 50px 50px 0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
     &-icon {
@@ -23,6 +25,8 @@
 
     &-content {
         text-align: left;
+        width: 522px;
+        flex: 1 1 auto;
     }
 
     &-title {
@@ -35,6 +39,7 @@
         column-gap: 5px;
         font-size: 1.2rem;
         font-weight: 500;
+        white-space: nowrap;
         background: rgba(255, 255, 255, 0.2);
         padding: 3px 10px;
         border-radius: 10px;
@@ -50,7 +55,7 @@
         padding: 1em;
         margin: 10px 0 10px 40px;
         border-radius: 10px;
-        width: 450px;
+        min-width: 300px;
 
         & li {
             margin: 10px 0 0 0;

@@ -3,7 +3,7 @@ import { FaCog } from 'react-icons/fa'
 import PropTypes from 'prop-types';
 import './UserMenu.scss';
 import { Person } from '../../api';
-import { STRING_CONSTANTS } from '../string.constants';
+import { STRING_CONSTANTS } from '../Strings.const';
 
 const UserInfo = (props: { name: any; ageGroup: any; sex: any; }) => {
   const { name, ageGroup, sex } = props;

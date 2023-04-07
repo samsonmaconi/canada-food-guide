@@ -2,7 +2,7 @@ import React from 'react'
 import './DailyFoodGuide.scss';
 import { FoodGuideData, useApi } from '../../api';
 import { FoodGroupCard, Header } from '../../components'
-import { STRING_CONSTANTS } from '../../components/string.constants';
+import { STRING_CONSTANTS } from '../../components/Strings.const';
 
 const tempConst = [
   {

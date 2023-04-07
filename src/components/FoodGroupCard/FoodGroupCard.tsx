@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FoodGroup } from '../../api'
+import { FoodGroup, FoodGroupCategory } from '../../api'
 import './FoodGroupCard.scss';
-// import Icons8Image from '../Icons8Image';
-import { STRING_CONSTANTS } from '../string.constants';
+import { STRING_CONSTANTS } from '../Strings.const';
+import FoodSamples from '../FoodSamples/FoodSamples';
+import useBreakpoint, { Breakpoints } from '../hooks/useBreakpoint';
 
 const FoodGroupCard = (props: { foodGroupData: FoodGroup }) => {
-  const { id, name, directionalStatemments } = props.foodGroupData
-  const image = "https://picsum.photos/50/50?grayscale&blur=2" // placeholderImage
+  const { id, name, directionalStatemments, categories } = props.foodGroupData
+  const breakpoint: Breakpoints = useBreakpoint();
+  const isSmallScreen = [Breakpoints.sm, Breakpoints.md].includes(breakpoint);
   const servingSize = getServingSize()
 
   return (
@@ -28,13 +30,23 @@ const FoodGroupCard = (props: { foodGroupData: FoodGroup }) => {
             <li key={key}>{statement}</li>
           )}
         </ul>
+      {
+        isSmallScreen && renderFoodSamples(categories)
+      }
       </div>
+      {
+        !isSmallScreen && renderFoodSamples(categories)
+      }
     </div>
   )
 }
 
+const renderFoodSamples = (categories: FoodGroupCategory[]) => {
+  return categories ? <FoodSamples foodGroupCategories={categories} /> : null;
+}
+
 const getServingSize = () => {
-  return 7;
+  return 7; // TODO
 }
 
 FoodGroupCard.propTypes = {
