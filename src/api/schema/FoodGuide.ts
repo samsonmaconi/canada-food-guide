@@ -4,6 +4,8 @@ export const Genders = [
     "Female"
 ]
 
+export type Sex = "Male" | "Female";
+
 export const AgeGroups = [
     "2 to 3",
     "4 to 8",
@@ -16,13 +18,12 @@ export const AgeGroups = [
 ]
 
 export interface ServingsGuide {
-    Male: ServingsGuideEntry[];
-    Female: ServingsGuideEntry[];
+    Male: ServingsGuideEntry;
+    Female: ServingsGuideEntry;
 }
 
 export interface ServingsGuideEntry {
-    ageRange: string;
-    servings: number;
+    [key: string]: number;
 }
 
 export interface OneUnitServingExample {

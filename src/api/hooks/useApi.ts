@@ -52,8 +52,8 @@ export const useApi = (): { data: FoodGuideData | null, isLoading: boolean, erro
         foodCategories[fgcat_id] = newCategory;
 
         const newServingsGuide: ServingsGuide = {
-          Male: [],
-          Female: []
+          Male: {},
+          Female: {}
         };
 
         if (foodGroups[fgid]) {
@@ -89,7 +89,8 @@ export const useApi = (): { data: FoodGuideData | null, isLoading: boolean, erro
       servings_per_dayData.forEach((entry: any) => {
         const { fgid, gender, ages, servings }: { gender: 'Male' | 'Female', [key: string]: any } = entry;
         if (foodGroups[fgid]) {
-          foodGroups[fgid].servingsGuide[gender][ages.trim()] = servings;
+          let recommendedServing = +(""+servings).split(" to ")[0] // use the smaller number as recomended bacause it's healthier
+          foodGroups[fgid].servingsGuide[gender][ages.trim()] = recommendedServing;
         }
       });
 

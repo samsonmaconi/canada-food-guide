@@ -5,8 +5,9 @@ export const STRING_CONSTANTS = {
     HeaderTitle: "Canada Food Guide",
     HeaderDescription: "Recommended Food Guide Servings per day",
     Loading: "Loading...",
-    UpdateFamilyProfile: "Update Family Profile",
-    ServingSize: "Recommended Serving Size",
+    SampleOneUnitServings: "Sample 1 unit servings",
+    RecommendedServing: "Recommended Serving",
     ServingUnits: "{0} units",
-    SampleOneUnitServings: "Sample 1 unit servings"
+    ServiceUnavailable: "Service currently unavailable. Please try again later.",
+    UpdateFamilyProfile: "Update Family Profile"
 }
