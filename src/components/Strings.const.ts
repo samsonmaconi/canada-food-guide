@@ -1,6 +1,7 @@
-// Todo: Localize for other languages
+// TODO: Localize for other languages
 
 export const STRING_CONSTANTS = {
+    Active: "Active",
     HeaderTitle: "Canada Food Guide",
     HeaderDescription: "Recommended Food Guide Servings per day",
     Loading: "Loading...",

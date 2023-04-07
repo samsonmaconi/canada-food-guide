@@ -54,7 +54,7 @@ FoodGroupCard.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     directionalStatemments: PropTypes.arrayOf(PropTypes.string).isRequired,
-    categories: PropTypes.arrayOf(PropTypes.string).isRequired
+    categories: PropTypes.arrayOf(PropTypes.object).isRequired
   }).isRequired
 }
 

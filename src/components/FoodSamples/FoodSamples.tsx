@@ -28,7 +28,7 @@ const FoodSamples: React.FC<Props> = ({ foodGroupCategories }) => {
                     <span className="category-name">{category.name}</span>
                     <div className="food-items">
                         {getRandomItemsFromArray(category.oneUnitServingExamples, Math.min(category.oneUnitServingExamples.length, SAMPLE_SIZE_PER_CATEGORY[Breakpoint],)).map((food: OneUnitServingExample, key: React.Key) => (
-                            <FoodItemCard key={key} name={food.foodName} imgUrl={food.imageUrl} servingSize={food.servingSize} categoryId={category.id} />
+                            <FoodItemCard key={key} name={food.foodName} imgUrl={food.imageUrl} servingSize={food.servingSize.toString()} categoryId={category.id} />
                         ))}
                     </div>
                 </div>

@@ -16,10 +16,9 @@
 .user-menu-dropdown {
 
     select {
-        font-size: 1.2rem;
         padding: 5px 10px;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 15px;
         background-color: #fff;
         cursor: pointer;
 
@@ -44,4 +43,5 @@
 
 .user-info {
     font-size: 14px;
+    text-align: right;
 }

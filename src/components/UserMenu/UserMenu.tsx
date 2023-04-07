@@ -9,7 +9,7 @@ const UserInfo = (props: { name: any; ageGroup: any; sex: any; }) => {
   const { name, ageGroup, sex } = props;
   return (
     <div className="user-info">
-      <span>Active Member: {`${name} (${sex}, ${ageGroup})`}</span>
+      <span><b>{STRING_CONSTANTS.Active}:</b> {`${name} (${sex}, ${ageGroup})`}</span>
     </div>
   );
 }
