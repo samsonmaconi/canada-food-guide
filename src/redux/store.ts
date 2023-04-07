@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import familyMembersReducer from './slices/familyMembersSlice';
+import registrationDialogReducer from './slices/registrationDialogSlice';
 
 const store = configureStore({
   reducer: {
-    familyMembers: familyMembersReducer
+    familyMembers: familyMembersReducer,
+    registrationDialog: registrationDialogReducer
   }
 });
 
