@@ -91,15 +91,15 @@ const Registration = () => {
       <span className="title">{REGISTRATION_STRING_CONSTANTS.userRegistration}</span>
       <div className="registration-form">
         <ButtonGroup className='invividualFamilyGrp' variant="contained" aria-label="Individual or Family">
-          <Button onClick={() => setisIndividual(true)} variant={!isIndividual ? "outlined" : "contained"}>{REGISTRATION_STRING_CONSTANTS.individual}</Button>
-          <Button onClick={() => setisIndividual(false)} variant={isIndividual ? "outlined" : "contained"}>{REGISTRATION_STRING_CONSTANTS.family}</Button>
+          <Button data-testid="isIndividualBtn" onClick={() => setisIndividual(true)} variant={!isIndividual ? "outlined" : "contained"}>{REGISTRATION_STRING_CONSTANTS.individual}</Button>
+          <Button data-testid="isFamilyBtn" onClick={() => setisIndividual(false)} variant={isIndividual ? "outlined" : "contained"}>{REGISTRATION_STRING_CONSTANTS.family}</Button>
         </ButtonGroup>
-        {!isIndividual ? <TextField value={familyName} onChange={handleFamilyNameChange} label={REGISTRATION_STRING_CONSTANTS.familyName} variant="standard" aria-label={REGISTRATION_STRING_CONSTANTS.name} />
+        {!isIndividual ? <TextField data-testid={`familyNameTxf`} value={familyName} onChange={handleFamilyNameChange} label={REGISTRATION_STRING_CONSTANTS.familyName} variant="standard" aria-label={REGISTRATION_STRING_CONSTANTS.name} />
           : null}
         {members.map((member, index) => {
           const { name, ageRange, sex } = member;
           return <div key={index} className="member-inputGroup">
-            <TextField value={name} onChange={(e) => handleNameChange(e, index)} label={REGISTRATION_STRING_CONSTANTS.name} variant="standard" aria-label={REGISTRATION_STRING_CONSTANTS.name} />
+            <TextField data-testid={`memberNameTxf${index}`} value={name} onChange={(e) => handleNameChange(e, index)} label={REGISTRATION_STRING_CONSTANTS.name} variant="standard" aria-label={REGISTRATION_STRING_CONSTANTS.name} />
             <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
               <InputLabel id={`selectLabel${index}`}>{REGISTRATION_STRING_CONSTANTS.ageGroup}</InputLabel>
               <Select
@@ -125,7 +125,7 @@ const Registration = () => {
               </RadioGroup>
             </FormControl>
             {index > 0 && (
-              <IconButton className='delete' color="error" aria-label="remove member" component="label" onClick={() => handleRemoveMember(index)}>
+              <IconButton data-testid="removeMemberBtn" className='delete' color="error" aria-label="remove member" component="label" onClick={() => handleRemoveMember(index)}>
                 <FaTrashAlt />
               </IconButton>
             )}
@@ -133,7 +133,7 @@ const Registration = () => {
         })
         }
         {!isIndividual && (
-          <Button onClick={handleAddMember} className="addMember" variant="outlined" startIcon={<FaUserPlus />}>
+          <Button data-testid="addMemberBtn" onClick={handleAddMember} className="addMember" variant="outlined" startIcon={<FaUserPlus />}>
             {REGISTRATION_STRING_CONSTANTS.addMember}
           </Button>
         )}
